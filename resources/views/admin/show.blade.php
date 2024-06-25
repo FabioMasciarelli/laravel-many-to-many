@@ -4,15 +4,22 @@
 
 <div>
 
-    <h1>Progetto: {{ $project->title }}</h1>
+    <dl>
+        <dt>Project Name</dt>
+        <dd>{{ $project->title }}</dd>
 
-    <h4>Ultima modifica: {{ $project->latest_fix }}</h4>
+        <dt>Latest Fix</dt>
+        <dd>{{ $project->latest_fix }}</dd>
 
-    <h5>Tipo: {{ $project->type_id ? $project->type->name : 'Undefined' }}</h5>
+        <dt>Type</dt>
+        <dd>{{ $project->type_id ? $project->type->name : 'Undefined' }}</dd>
 
-    <h6>Readme: {{ $project->readme }}</h6>
+        <dt>ReadME</dt>
+        <dd>{{ $project->readme }}</dd>
 
-    <h6>Linguaggio: {{ $project->languages }}</h6>
+        <dt>Technologies</dt>
+        <dd></dd>
+    </dl>
 
 </div>
 

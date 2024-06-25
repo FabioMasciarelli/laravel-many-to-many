@@ -23,7 +23,7 @@
                     <th scope="row">{{ $project->title }}</th>
                     <td>{{ $project->readme }}</td>
                     <td>{{ $project->languages }}</td>
-                    <td class="d-flex gap-3">
+                    <td class="d-flex">
                         <a href="{{ route('admin.projects.show', ['project' => $project->slug]) }}"
                             class="btn btn-success"><i class="fa-solid fa-eye"></i></a>
                         <a href="{{ route('admin.projects.edit', ['project' => $project->slug]) }}"
