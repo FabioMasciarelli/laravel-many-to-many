@@ -22,15 +22,14 @@
                     <th scope="row">{{ $project->title }}</th>
                     <td>{{ $project->latest_fix }}</td>
                     <td>
-                        <a href="{{ route('admin.projects.show', ['project' => $project->slug]) }}"
-                            class="btn btn-success"><i class="fa-solid fa-eye"></i></a>
+                        <a href="{{ route('admin.projects.show', ['project' => $project->slug]) }}" class="btn btn-success"><i class="fa-solid fa-eye"></i></a>
                     </td>
                 </tr>
             @endforeach
         </tbody>
     </table>
 
-    <div>
+    <div class="d-flex">
         {{ $projects->links() }}
     </div>
 @endsection

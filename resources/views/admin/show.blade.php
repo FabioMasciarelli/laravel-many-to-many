@@ -34,6 +34,9 @@
             @foreach ($project->technologies as $technology)
                 <dd>{{ $technology->name }}</dd>
             @endforeach
+
+            {{-- <dt>File Size</dt>
+            <dd>{{ file_size(storage('app/public/projects_file')) }}</dd> --}}
         </dl>
 
     </div>

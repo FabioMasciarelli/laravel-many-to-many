@@ -10,15 +10,6 @@
             <label class="input-group-text" for="uploadfile">Upload file</label>
         </div>
 
-        {{-- @if (hasFile())
-            <div class="mb-3">
-                <dl>
-                    <dt>File size</dt>
-                    <dd>{{ file_size() }}</dd>
-                </dl>
-            </div>
-        @endif --}}
-
         <div class="mb-3">
             <label for="title" class="form-label">Title</label>
             <input type="text" class="form-control" id="title" name="title">
@@ -34,9 +25,20 @@
             <input type="text" class="form-control" id="latest_fix" name="latest_fix" placeholder="YYYY-MM-DD">
         </div>
 
+        <div class="mb-3">
+            <label for="select_type">Select Type</label>
+            <select class="form-select form-select-md" id="select_type" name="name">
+                <option></option>
+                <option value="Full-Stack">Full-Stack</option>
+                <option value="Back-End">Back-End</option>
+                <option value="Front-End">Front-End</option>
+            </select>
+        </div>
+
         <div class="btn-group" role="group">
             @foreach ($technologies as $technology)
-                <input @checked(in_array($technology->id, old('technologies', []))) type="checkbox" name="technologies[]" class="btn-check" id="accessory {{ $technology->id }}" value="{{ $technology->id }}">
+                <input @checked(in_array($technology->id, old('technologies', []))) type="checkbox" name="technologies[]" class="btn-check"
+                    id="accessory {{ $technology->id }}" value="{{ $technology->id }}">
                 <label class="btn btn-outline-primary" for="accessory {{ $technology->id }}">{{ $technology->name }}</label>
             @endforeach
         </div>
