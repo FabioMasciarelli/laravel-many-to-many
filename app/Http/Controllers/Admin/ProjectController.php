@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\EditProjectRequest;
 use App\Http\Requests\StoreProjectRequest;
 use App\Models\Project;
 use App\Models\Technology;
@@ -82,7 +83,7 @@ class ProjectController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Project $project)
+    public function update(EditProjectRequest $request, Project $project)
     {
         $data = $request->all();
         $project->update($data);
