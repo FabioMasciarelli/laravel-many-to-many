@@ -3,6 +3,20 @@
 @section('content')
     <div>
 
+        <div class="mb-3 d-flex mt-3 gap-2">
+            <a href="{{ route('admin.projects.edit', ['project' => $project->slug]) }}"
+                class="btn btn-warning"><i class="fa-solid fa-pen"></i></a>
+    
+            <form action="{{ route('admin.projects.destroy', ['project' => $project->slug]) }}" method="POST">
+    
+                @csrf
+                @method('DELETE')
+                <button type="submit" class="btn btn-danger"><i class="fa-solid fa-trash-can"></i></button>
+    
+            </form>
+
+        </div>
+
         <dl>
             <dt>Project Name</dt>
             <dd>{{ $project->title }}</dd>

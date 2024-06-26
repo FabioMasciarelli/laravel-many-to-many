@@ -21,20 +21,20 @@
         </div>
 
         <div class="mb-3">
-            <label for="languages" class="form-label">Language</label>
-            <select class="form-select" aria-label="Default select example" id="languages" name="languages">
-                <option selected>Select</option>
-                <option value="Javascript">Javascript</option>
-                <option value="PHP">PHP</option>
-                <option value="CSS">CSS</option>
-            </select>
-        </div>
-
-        <div class="mb-3">
             <label for="latest_fix" class="form-label">Latest fix</label>
             <input type="text" class="form-control" id="latest_fix" name="latest_fix" placeholder="YYYY-MM-DD">
         </div>
 
-        <button type="submit" class="btn btn-success">Create</button>
+        {{-- <div class="btn-group mb-3">
+
+            @foreach ($collection as $item)
+                <input type="checkbox" name="technologies[]" class="btn-check" id="btncheck" autocomplete="off">
+                <label class="btn btn-outline-primary" for="btncheck">{{  }}</label>
+            @endforeach
+        </div> --}}
+
+        <div class="mt-3">
+            <button type="submit" class="btn btn-success">Create</button>
+        </div>
     </form>
 @endsection
