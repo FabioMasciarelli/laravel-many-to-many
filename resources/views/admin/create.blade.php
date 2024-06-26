@@ -6,9 +6,18 @@
         @csrf
 
         <div class="input-group mb-3 mt-5">
-            <input type="file" class="form-control" id="uploadfile">
-            <label class="input-group-text" for="uploadfile" name="uploadfile">Upload file</label>
+            <input type="file" class="form-control" id="uploadfile" name="upload_file">
+            <label class="input-group-text" for="uploadfile">Upload file</label>
         </div>
+
+        {{-- @if (hasFile())
+            <div class="mb-3">
+                <dl>
+                    <dt>File size</dt>
+                    <dd>{{ file_size() }}</dd>
+                </dl>
+            </div>
+        @endif --}}
 
         <div class="mb-3">
             <label for="title" class="form-label">Title</label>
@@ -25,13 +34,12 @@
             <input type="text" class="form-control" id="latest_fix" name="latest_fix" placeholder="YYYY-MM-DD">
         </div>
 
-        {{-- <div class="btn-group mb-3">
-
-            @foreach ($collection as $item)
-                <input type="checkbox" name="technologies[]" class="btn-check" id="btncheck" autocomplete="off">
-                <label class="btn btn-outline-primary" for="btncheck">{{  }}</label>
+        <div class="btn-group" role="group">
+            @foreach ($technologies as $technology)
+                <input @checked(in_array($technology->id, old('technologies', []))) type="checkbox" name="technologies[]" class="btn-check" id="accessory {{ $technology->id }}" value="{{ $technology->id }}">
+                <label class="btn btn-outline-primary" for="accessory {{ $technology->id }}">{{ $technology->name }}</label>
             @endforeach
-        </div> --}}
+        </div>
 
         <div class="mt-3">
             <button type="submit" class="btn btn-success">Create</button>

@@ -4,7 +4,9 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Project;
+use App\Models\Technology;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 
 class ProjectController extends Controller
@@ -24,7 +26,10 @@ class ProjectController extends Controller
      */
     public function create()
     {
-        return view('admin.create');
+
+        $technologies = Technology::all();
+
+        return view('admin.create', compact('technologies'));
     }
 
     /**
@@ -32,12 +37,23 @@ class ProjectController extends Controller
      */
     public function store(Request $request)
     {
+
         $data = $request->all();
+
+        if($request->hasFile('upload_file')) {
+            $file_path = Storage::put('projects_file', $request->upload_file);
+            $data['upload_file'] = $file_path;
+        }
 
         $newProject = new Project();
         $newProject->fill($data);
         $newProject->slug= Str::slug($newProject->title);
         $newProject->save();
+
+
+        if($request->has('technologies')) {
+            $newProject->technologies()->attach($request->technologies);
+        }
 
         return redirect()->route('admin.projects.show', ['project' => $newProject->slug]);
     }
@@ -55,7 +71,10 @@ class ProjectController extends Controller
      */
     public function edit(Project $project)
     {
-        return view('admin.edit', compact('project'));
+
+        $technologies = Technology::all();
+
+        return view('admin.edit', compact('project', 'technologies'));
     }
 
     /**
@@ -66,6 +85,8 @@ class ProjectController extends Controller
         $data = $request->all();
         $project->update($data);
 
+        $project->technologies()->sync($request->technologies);
+
         return redirect()->route('admin.projects.show', $project->slug);
     }
 
@@ -74,6 +95,10 @@ class ProjectController extends Controller
      */
     public function destroy(Project $project)
     {
+
+        if($project->upload_file) {
+            Storage::delete($project->upload_file);
+        }
         $project->delete();
 
         return redirect()->route('admin.projects.index')->with('message', 'Il Progetto '. $project->title . ' è stato cancellato');
