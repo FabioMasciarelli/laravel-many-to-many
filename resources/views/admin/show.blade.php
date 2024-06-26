@@ -3,17 +3,22 @@
 @section('content')
     <div>
 
-        <div class="mb-3 d-flex mt-3 gap-2">
-            <a href="{{ route('admin.projects.edit', ['project' => $project->slug]) }}"
-                class="btn btn-warning"><i class="fa-solid fa-pen"></i></a>
-    
-            <form action="{{ route('admin.projects.destroy', ['project' => $project->slug]) }}" method="POST">
-    
-                @csrf
-                @method('DELETE')
-                <button type="submit" class="btn btn-danger"><i class="fa-solid fa-trash-can"></i></button>
-    
-            </form>
+        <div class="mb-3 d-flex mt-3" >
+
+            <div class="d-flex justify-content-start  gap-2">
+                <a href="{{ route('admin.projects.edit', ['project' => $project->slug]) }}" class="btn btn-primary"><i
+                        class="fa-solid fa-pen"></i></a>
+
+                <form action="{{ route('admin.projects.destroy', ['project' => $project->slug]) }}" method="POST">
+
+                    @csrf
+                    @method('DELETE')
+                    <button type="submit" class="btn btn-danger"><i class="fa-solid fa-trash-can"></i></button>
+
+                </form>
+
+                <a href="" class="btn btn-secondary"><i class="fa-solid fa-down-long"></i></a>
+            </div>
 
         </div>
 
@@ -32,7 +37,8 @@
 
             <dt>Technologies</dt>
             @foreach ($project->technologies as $technology)
-                <dd style="background-color: {{ $technology->color }}" class="d-inline p-1 rounded text-white">{{ $technology->name }}</dd>
+                <dd style="background-color: {{ $technology->color }}" class="d-inline p-1 rounded text-white">
+                    {{ $technology->name }}</dd>
             @endforeach
 
             {{-- <dt>File Size</dt>

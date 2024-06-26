@@ -2,6 +2,17 @@
 
 @section('content')
     <h1>Create New Project</h1>
+
+    @if ($errors->any())
+        <div class="alert alert-danger">
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
+    
     <form action="{{ route('admin.projects.store') }}" method="POST" enctype="multipart/form-data">
         @csrf
 
@@ -27,8 +38,8 @@
 
         <div class="mb-3">
             <label for="select_type">Select Type</label>
-            <select class="form-select form-select-md" id="select_type" name="name">
-                <option></option>
+            <select class="form-select form-select-md" id="select_type" name="type_id">
+                <option selected>Type</option>
                 <option value="Full-Stack">Full-Stack</option>
                 <option value="Back-End">Back-End</option>
                 <option value="Front-End">Front-End</option>
