@@ -32,7 +32,7 @@
 
             <dt>Technologies</dt>
             @foreach ($project->technologies as $technology)
-                <dd>{{ $technology->name }}</dd>
+                <dd style="background-color: {{ $technology->color }}" class="d-inline p-1 rounded text-white">{{ $technology->name }}</dd>
             @endforeach
 
             {{-- <dt>File Size</dt>
