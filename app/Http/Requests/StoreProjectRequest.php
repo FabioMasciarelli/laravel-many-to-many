@@ -25,7 +25,7 @@ class StoreProjectRequest extends FormRequest
         return [
             'title' => 'required | min:5',
             'upload_file' => 'required',
-            'type_id' => 'required | exists:types, id'
+            'type_id' => 'required | exists:types,id'
         ];
     }
 }

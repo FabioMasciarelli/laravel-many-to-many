@@ -12,7 +12,7 @@
             </ul>
         </div>
     @endif
-    
+
     <form action="{{ route('admin.projects.store') }}" method="POST" enctype="multipart/form-data">
         @csrf
 
