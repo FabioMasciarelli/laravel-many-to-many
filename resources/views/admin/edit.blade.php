@@ -2,7 +2,7 @@
 
 
 @section('content')
-    <h1>Modifica progetto</h1>
+    <h1>Edit Project</h1>
 
     @if ($errors->any())
         <div class="alert alert-danger">
@@ -44,9 +44,9 @@
             <label for="select_type">Select Type</label>
             <select class="form-select form-select-md" id="select_type" name="type_id">
                 <option selected>Type</option>
-                <option @selected($project->type === 'Full-Stack') value="Full-Stack">Full-Stack</option>
-                <option @selected($project->type === 'Back-End') value="Back-End">Back-End</option>
-                <option @selected($project->type === 'Front-End') value="Front-End">Front-End</option>
+                <option @selected($project->type_id === 1) value="Full-Stack">Full-Stack</option>
+                <option @selected($project->type_id === 2) value="Back-End">Back-End</option>
+                <option @selected($project->type_id === 3) value="Front-End">Front-End</option>
             </select>
         </div>
 
