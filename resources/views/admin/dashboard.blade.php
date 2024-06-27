@@ -14,6 +14,8 @@
                             </div>
                         @endif
 
+                        <h1>Hi {{ $user->name }}! Let's start together!</h1>
+
                         {{ __('You are logged in!') }}
                     </div>
                 </div>

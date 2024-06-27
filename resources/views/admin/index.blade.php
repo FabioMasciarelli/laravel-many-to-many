@@ -8,6 +8,11 @@
         </div>
     @endif
 
+    @if (count($projects) < 1)
+        <div class="d-flex justify-content-center align-items-center h-100">
+            <h1>There are no Projects</h1>
+        </div>
+    @else
     <table class="table">
         <thead>
             <tr>
@@ -28,6 +33,7 @@
             @endforeach
         </tbody>
     </table>
+    @endif
 
     <div class="d-flex">
         {{ $projects->links() }}
