@@ -17,7 +17,7 @@
 
                 </form>
 
-                <a href="" class="btn btn-secondary"><i class="fa-solid fa-down-long"></i></a>
+                <a href="" class="btn btn-secondary" download><i class="fa-solid fa-down-long"></i></a>
             </div>
 
         </div>

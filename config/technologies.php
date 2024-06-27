@@ -2,35 +2,35 @@
 
 return [
     [
-        'title' => "Vue",
+        'name' => "Vue",
         'color' => '#1dbf86'
     ],
     [
-        'title' => "SASS",
+        'name' => "SASS",
         'color' => '#cc6799'
     ],
     [
-        'title' => "CSS",
+        'name' => "CSS",
         'color' => 'dodgerblue'
     ],
     [
-        'title' => "HTML",
+        'name' => "HTML",
         'color' => '#e44d27'
     ],
     [
-        'title' => "Javascript",
+        'name' => "Javascript",
         'color' => 'yellow'
     ],
     [
-        'title' => "Laravel",
+        'name' => "Laravel",
         'color' => 'red'
     ],
     [
-        'title' => "Bootstrap",
+        'name' => "Bootstrap",
         'color' => '#7109f6'
     ],
     [
-        'title' => "PHP",
+        'name' => "PHP",
         'color' => '#4f5b93'
     ]
 ];

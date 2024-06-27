@@ -40,9 +40,9 @@
             <label for="select_type">Select Type</label>
             <select class="form-select form-select-md" id="select_type" name="type_id">
                 <option selected>Type</option>
-                <option value="Full-Stack">Full-Stack</option>
-                <option value="Back-End">Back-End</option>
-                <option value="Front-End">Front-End</option>
+                <option value="1">Full-Stack</option>
+                <option value="2">Back-End</option>
+                <option value="3">Front-End</option>
             </select>
         </div>
 

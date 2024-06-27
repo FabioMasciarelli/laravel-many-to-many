@@ -2,15 +2,15 @@
 
 return [
     [
-        'title' => "Front-End",
+        'name' => "Front-End",
         'color' => 'blue'
     ],
     [
-        'title' => "Back-End",
+        'name' => "Back-End",
         'color' => 'black'
     ],
     [
-        'title' => "Full-Stack",
+        'name' => "Full-Stack",
         'color' => 'purple'
     ],
     
